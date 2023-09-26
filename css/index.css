@@ -1,0 +1,356 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* side nav  */
+#sidebar {
+  position: fixed;
+  height: 100% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  width: 260px;
+  overflow-y: auto;
+  transition: all 0.4s linear;
+  background: #ffffff;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%),
+    0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+#sidebar::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+  background-color: #eee;
+  scrollbar-width: thin;
+  /* display: none; */
+}
+#sidebar::-webkit-scrollbar-thumbs {
+  width: 5px;
+  border-radius: 10px;
+  background-color: #333;
+  display: none;
+}
+
+#sidebar:hover::-webkit-scrollbar {
+  display: block;
+  /* width: 5px; */
+}
+#sidebar:hover::-webkit-scrollbar-thumbs {
+  display: block;
+}
+
+.sideNaveContent {
+  max-height: 55px;
+}
+.aa {
+  animation: appear 1s forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.sidebar-header {
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-header h3 {
+  color: #333;
+  font-size: 17px;
+  margin: 0px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  font-weight: 600;
+}
+
+.sidebar-header h3 img {
+  width: 45px;
+  margin-right: 10px;
+}
+
+#sidebar ul li {
+  padding: 2px 7px;
+}
+
+/* new added  */
+.dropdown-toggle::after {
+  position: absolute;
+  right: 10px;
+  top: 23px;
+}
+
+#sidebar.active .dropdown-toggle::after {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+/* new added  */
+
+#sidebar ul li.active > a {
+  color: #333;
+  background-color: rgba(200, 200, 200, 0.1);
+}
+#sidebar ul li.active > ul > li.active {
+  color: #333;
+  background-color: rgba(115, 103, 240, 0.7);
+  border-radius: 20px;
+}
+#sidebar ul li.active > ul > li.active > a {
+  color: #ffffff;
+}
+
+#sidebar ul li a:hover {
+  color: #333;
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+.dropdown-toggle::after {
+  position: absolute;
+  right: 10px;
+  top: 23px;
+}
+
+#sidebar ul li.drodown {
+  position: sticky;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  line-height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  position: relative;
+  font-weight: 400;
+  display: block;
+}
+
+#sidebar ul li a span {
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+#sidebar ul li a i {
+  position: relative;
+  margin-right: 10px;
+  top: 5px;
+  color: #555555;
+  margin-left: 10px;
+}
+
+/* top nav  */
+#content {
+  position: relative;
+  transition: all 0.3s;
+  background-color: #eeeeee;
+  padding: 0 0 5px 0;
+}
+
+.navbar {
+  background-color: #a199ef;
+  color: #ffffff;
+}
+
+.navbar-brand {
+  color: #ffffff;
+}
+
+.navbar button {
+  background-color: transparent;
+  border: none;
+}
+.navbar button span {
+  color: #fff;
+}
+
+#sidebarCollapse {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  margin-right: 20px;
+  border: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+#sidebarCollapse span {
+  margin: 9px;
+  padding: 0px;
+}
+
+.navbar-nav > li.active {
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar .notification {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  display: block;
+  font-size: 9px;
+  border: 0px;
+  font-size: 10px;
+  background: #d9534f;
+  min-width: 15px;
+  text-align: center;
+  padding: 1px 5px;
+  height: 15px;
+  border-radius: 2px;
+  line-height: 14px;
+}
+
+.navbar-nav > li.show .dropdown-menu {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu li > a {
+  font-size: 13px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 2px;
+  font-weight: 400;
+  transition: all 150ms linear;
+}
+
+.navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar-nav li a {
+  position: relative;
+  display: block;
+  padding: 10px 15px !important;
+}
+
+/*  */
+#sidebar.show-nav,
+.body-overlay.show-nav {
+  transform: translatex(0%);
+  opacity: 1;
+  display: block;
+  visibility: visible;
+  z-index: 15;
+  overflow-y: auto;
+}
+/*  */
+
+/* --------------new style ----------------- */
+
+#content-container {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+#content {
+  height: 100%;
+}
+
+.navImg {
+  width: 30px;
+  border-radius: 100%;
+}
+
+/* --------------new style ----------------- */
+
+@media only screen and (min-width: 992px) {
+  #sidebar.inActive {
+    width: 80px;
+    height: 100% !important;
+    position: fixed !important;
+    overflow: visible !important;
+    top: 0 !important;
+    z-index: 666;
+    float: left !important;
+    bottom: 0 !important;
+  }
+  /* content  */
+  #content-container {
+    margin-left: 80px;
+    overflow-y: auto;
+  }
+  #content {
+    margin: auto 12% auto 12%;
+  }
+  .almost {
+    width: 550px;
+  }
+}
+
+.main-content {
+  margin: 25px 20px;
+  border-radius: 20px !important;
+}
+
+@media only screen and (max-width: 991px) {
+  #sidebar {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    z-index: 16;
+    width: 260px;
+    /* transform: translatex(-100%); */
+    transition: all 0.4 linear;
+    box-shadow: none !important;
+  }
+  #sidebar.inActive {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    z-index: 16;
+    width: 260px;
+    transform: translatex(-100%);
+    transition: all 0.4s linear;
+    box-shadow: none !important;
+  }
+  .body-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 3;
+    transition: all 150ms linear;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .almost {
+    width: 320px;
+  }
+}
