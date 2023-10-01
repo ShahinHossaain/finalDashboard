@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--google material icon-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
@@ -166,8 +166,12 @@
     </nav>
     <!-- top nav  -->
     <div id="content-container">
+       
+
         <div id="content" class="active">
-            <div class="top-navbar">
+
+           
+            <!-- <div class="top-navbar">
                 <nav class="navbar navbar-expand">
                     <div class="container-fluid">
         
@@ -285,10 +289,193 @@
                         
                     </div>
                 </nav>
-            </div>
+            </div> -->
             
             <!-- new top nav  -->
             
+            <!-- new added  -->
+            <nav class="navbar bg-light shadow">
+                <div class="container-fluid">
+                    <span class="navbar-brand mb-0 h1 text-dark" style="font-family: 'Montserrat', sans-serif;">Dashboard</span>
+
+
+                    <div class="d-flex gap-4 align-items-center">
+                        <div>
+                            <a href="#billing"><i class="material-icons text-gray" type="button"">storefront</i></a>
+                        </div>
+                       
+                        <div class="">                            
+                            <div class="dropdown">
+                                <i class="material-icons text-gray  " type="button" data-bs-toggle="dropdown" aria-expanded="false">apps</i>
+                                <ul class="dropdown-menu dropdown-menu-end py-0 navDrop1 shadow rounded-2" id="dropList">
+                                  <li>
+                                    <div class="d-flex justify-content-between mx-5 my-3">
+                                        <div class="fw-light" style="font-size: 20px;">shortcut</div>
+                                        <div><i class="material-icons d-block text-gray">person</i></div>
+                                    </div>
+                                    
+                                        <div class="row mx-0">
+                                            
+                                            <div class="col-6 px-0 border border-light-subtl">
+                                                <a class="dropdown-item py-4 text-center mx-0 text-decoration-none text-dark" href="#">
+                                                    <i class="material-icons d-block text-gray">person</i>
+                                                    <p class="text-gray">Category</p>
+                                                </a>
+                                            </div>
+                                        
+                                            <div class="col-6 px-0 border border-light-subtl">
+                                                <a class="dropdown-item py-4 text-center mx-0 text-decoration-none text-dark" href="#">
+                                                    <i class="material-icons d-block text-gray">person</i>
+                                                    <p class="text-gray">Category</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row mx-0">
+                                            
+                                            <div class="col-6 px-0 border border-light-subtl">
+                                                <a class="dropdown-item py-4 text-center mx-0 text-decoration-none text-dark" href="#">
+                                                    <i class="material-icons d-block text-gray">person</i>
+                                                    <p class="text-gray">Category</p>
+                                                </a>
+                                            </div>
+                                        
+                                            <div class="col-6 px-0 border border-light-subtl">
+                                                <a class="dropdown-item py-4 text-center mx-0 text-decoration-none text-dark" href="#">
+                                                    <i class="material-icons d-block text-gray">person</i>
+                                                    <p class="text-gray">Category</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row mx-0">
+                                            
+                                            <div class="col-6 px-0 border border-light-subtl">
+                                                <a class="dropdown-item py-4 text-center mx-0 text-decoration-none text-dark" href="#">
+                                                    <i class="material-icons d-block text-gray">person</i>
+                                                    <p class="text-gray">Category</p>
+                                                </a>
+                                            </div>
+                                        
+                                            <div class="col-6 px-0 border border-light-subtl">
+                                                <a class="dropdown-item py-4 text-center mx-0 text-decoration-none text-dark" href="#">
+                                                    <i class="material-icons d-block text-gray">person</i>
+                                                    <p class="text-gray">Category</p>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                </ul>
+
+                                <!-- new added  -->
+                                <!-- <ul class="dropdown-menu dropdown-menu-end shortcut overflow-hidden p-0 show" data-bs-popper="static">
+                                    <li class="dropdown-item navbar px-4">
+                                        <span class="text">Shortcut</span>
+                                        <span class="material-symbols-outlined"> dataset </span>
+                                    </li>
+                                    <hr class="m-0">
+                                    <li class="dropdown-item row m-0">
+                                        <div class="col-6 border text-center py-2">
+                                            <a href="https://chamberin.com/service-category">
+                                                <p class="text m-0"><span class="material-symbols-outlined"> list </span>
+                                                </p>
+                                                <p class="m-0 super-small"><small>Category</small> </p>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 border text-center py-2">
+                                            <a href="https://chamberin.com/service">
+                                                <p class="text m-0"><span class="material-symbols-outlined"> medical_information </span>
+                                                </p>
+                                                <p class="m-0 super-small"><small>Service</small> </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item row m-0">
+                                        <div class="col-6 border text-center py-2">
+                                            <a href="https://chamberin.com/client">
+                                                <p class="text m-0"><span class="material-symbols-outlined"> group </span>
+                                                </p>
+                                                <p class="m-0 super-small"><small>Client</small> </p>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 border text-center py-2">
+                                            <a href="https://chamberin.com/provider">
+                                                <p class="text m-0"><span class="material-symbols-outlined"> group </span>
+                                                </p>
+                                                <p class="m-0 super-small"><small>Provider</small> </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item row m-0">
+                                        <div class="col-6 border text-center py-2">
+                                            <a href="https://chamberin.com/payment-type">
+                                                <p class="text m-0"><span class="material-symbols-outlined"> payments </span>
+                                                </p>
+                                                <p class="m-0 super-small"><small>Payment Type</small> </p>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 border text-center py-2">
+                                            <a href="https://chamberin.com/branch">
+                                                <p class="text m-0"><span class="material-symbols-outlined"> meeting_room </span>
+                                                </p>
+                                                <p class="m-0 super-small"><small>Branch</small> </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul> -->
+                                <!-- new added  -->
+                            </div>
+                           
+                        </div>
+
+                        <div class="profile">                            
+                            <div class="dropdown">
+                                <img src="https://chamberin.com/backend/template-assets/images/avator.jpg" alt="" class="img-fluid navImg rounded-circle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <ul class="dropdown-menu dropdown-menu-end navDrop ps-3 pe-4 shadow">
+                                  <li>
+                                    <a class="dropdown-item mx-0 text-decoration-none text-dark" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="https://chamberin.com/backend/template-assets/images/avator.jpg" alt="" class="navImg">
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="fw-light m-0">superadmin</h5>
+                                                <h6 class="fw-light m-0">superadmin</h6>
+                                            </div>
+                                        </div>
+                                        
+                                    </a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="d-flex gap-3 align-items-center">
+                                            <i class="material-icons d-block">person</i>
+                                            <h6 class="mb-0 fw-light">Profile</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                                
+                                  <li><a class="dropdown-item" href="#">
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <i class="material-icons d-block">logout</i>
+                                        <h6 class="mb-0 fw-light">Logout</h6>
+                                    </div>
+                                  </a>
+                                  </li>
+
+                                </ul>
+                            </div>
+                           
+                        </div>
+                        
+                    </div>
+
+
+                    
+                </div>
+            </nav>
+            
+            <!-- new added  -->
     
               <!-- main section  -->
               <div class="main-content">
