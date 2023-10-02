@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 /* .aa {
@@ -201,6 +201,11 @@ body {
   height: 40px;
 }
 
+.card-footer {
+  background-color: #6258cc !important;
+  text-align: center;
+}
+
 /* .navDrop {
   animation: fadeInUp 0.3s ease-in-out;
   width: 255px;
@@ -219,9 +224,8 @@ body {
   height: 45px;
   text-align: center;
   line-height: 45px;
-  margin-right: 20px;
   border: none;
-  color: #ffffff;
+  color: #736c6c;
   background-color: rgba(0, 0, 0, 0.09);
 }
 
