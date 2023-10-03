@@ -8,21 +8,77 @@ const navInactiveContent = document.getElementById('navInactiveContent');
 const navActiveContent = document.getElementById('navActiveContent');
 const navTitle = document.querySelectorAll('.navTitle')
 const child = document.querySelectorAll('.child')
+const sideNaveContent = document.querySelectorAll('.sideNaveContent')
+const sideNavList = document.querySelectorAll('.sideNavList')
+const closeSideActive = document.querySelectorAll('.closeSideActive')
+
+console.log("closeSideActive  ", closeSideActive.forEach(e => console.log(e.innerText)))
 
 
+sideNavList.forEach(element => {
+    element.addEventListener('click', () => {
+        setTimeout(() => {
+            // console.log(element.childNodes[3].childNodes.classList.contains('active'));
+            let status = true;
+            element.childNodes[3].childNodes.forEach((element, index) => {
+                if (index % 2 !== 0) {
+                    if (element.classList.contains('active')) {
+                        status = false;
+                    }
+                };
+            })
+
+            element.childNodes[3].classList.contains('show') ? element.classList.add('active') : status && element.classList.remove('active');
+
+        }, 360);
+        pp();
+    });
+});
+
+const pp = () => {
+    navTitle.forEach(e => {
+        e.parentElement.classList.remove('active');
+        if (!e.classList.contains('show')) {
+            e.classList.remove('show')
+        }
+        e.parentNode.classList.contains('superActive') ? e.parentNode.classList.add('active') : e.parentNode.classList.remove('active')
+    })
+}
+
+const setActiveSideNaveContent = (iconName) => {
+    closeSideActive.forEach(e => e.innerText === iconName ? e.parentNode.classList.add('active') : e.parentNode.classList.remove('active'))
+}
 
 navTitle.forEach(element => {
     element.addEventListener('click', () => {
-        navTitle.forEach(e => {
-            e.parentElement.classList.remove('active');
-            // if (!e.classList.contains('show')) {
-            e.classList.remove('show')
-            // }
-        })
+        // navTitle.forEach(e => {
+        //     e.parentElement.classList.remove('active');
+        //     if (!e.classList.contains('show')) {
+        //     e.classList.remove('show')
+        //     console.log(e.parentNode)
+        //     }
+        // })
+        pp()
 
         element.classList.add('show')
+        console.log('element', element)
+        element.classList.contains('show') ? element.parentElement.classList.add('active', 'superActive') : element.parentElement.classList.remove('active');
 
-        element.parentElement.classList.add('active');
+        navActiveContent.childNodes.forEach((e, i) => {
+            if (i % 2 !== 0) {
+                e !== element.parentNode && e.classList.remove('superActive')
+                e !== element.parentNode && console.log('222', e)
+            }
+        })
+
+        setActiveSideNaveContent(element.parentNode.childNodes[1].childNodes[1].innerText)
+
+        // i % 2 !== 0 && console.log('333', e))
+        // if(i % 2 !== 0){
+        //     e !== element && console.log('333', e)
+        // }
+        // console.log('eee', navActiveContent.childNodes)
+
     })
 
     element.parentElement.addEventListener('click', (e) => {
@@ -34,6 +90,9 @@ navTitle.forEach(element => {
         element.parentElement.classList.add('active')
     })
 });
+
+
+
 
 child.forEach(element => {
     element.addEventListener('click', () => {
@@ -109,6 +168,8 @@ sidebarCollapse.addEventListener('click', () => {
 
     setIsSideMenuOpen()
 })
+
+
 
 
 
