@@ -179,7 +179,7 @@ body {
 
 /* top nav  */
 #content {
-  position: relative;
+  /* position: relative; */
   transition: all 0.3s;
   padding: 0 0 5px 0;
 }
@@ -380,6 +380,10 @@ body {
 }
 
 @media only screen and (max-width: 991px) {
+  #sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
   #sidebar {
     position: fixed;
     background-color: white;
@@ -390,6 +394,10 @@ body {
     /* transform: translatex(-100%); */
     transition: all 0.4 linear;
     box-shadow: none !important;
+  }
+
+  .p-fixed {
+    position: fixed;
   }
   #sidebar.inActive {
     position: fixed;

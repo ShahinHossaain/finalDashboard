@@ -12,13 +12,17 @@ const sideNaveContent = document.querySelectorAll('.sideNaveContent')
 const sideNavList = document.querySelectorAll('.sideNavList')
 const closeSideActive = document.querySelectorAll('.closeSideActive')
 
-console.log("closeSideActive  ", closeSideActive.forEach(e => console.log(e.innerText)))
+
+
+
+
+
 
 
 sideNavList.forEach(element => {
     element.addEventListener('click', () => {
         setTimeout(() => {
-            // console.log(element.childNodes[3].childNodes.classList.contains('active'));
+            // 
             let status = true;
             element.childNodes[3].childNodes.forEach((element, index) => {
                 if (index % 2 !== 0) {
@@ -51,33 +55,22 @@ const setActiveSideNaveContent = (iconName) => {
 
 navTitle.forEach(element => {
     element.addEventListener('click', () => {
-        // navTitle.forEach(e => {
-        //     e.parentElement.classList.remove('active');
-        //     if (!e.classList.contains('show')) {
-        //     e.classList.remove('show')
-        //     console.log(e.parentNode)
-        //     }
-        // })
+
         pp()
 
         element.classList.add('show')
-        console.log('element', element)
+
         element.classList.contains('show') ? element.parentElement.classList.add('active', 'superActive') : element.parentElement.classList.remove('active');
 
         navActiveContent.childNodes.forEach((e, i) => {
             if (i % 2 !== 0) {
                 e !== element.parentNode && e.classList.remove('superActive')
-                e !== element.parentNode && console.log('222', e)
+
             }
         })
 
         setActiveSideNaveContent(element.parentNode.childNodes[1].childNodes[1].innerText)
 
-        // i % 2 !== 0 && console.log('333', e))
-        // if(i % 2 !== 0){
-        //     e !== element && console.log('333', e)
-        // }
-        // console.log('eee', navActiveContent.childNodes)
 
     })
 
@@ -115,16 +108,31 @@ const setIsSideMenuOpen = () => {
 
 }
 
+miniBtn.addEventListener('click', () => {
+    content.classList.add('p-fixed')
+    content.classList.remove('position-relative')
+})
+
+bodyOverlay[0].addEventListener('click', () => {
+    content.classList.add('position-relative')
+    content.classList.remove('p-fixed')
+})
 // Add "inActive" class when hovering
 sidebar.addEventListener('mouseenter', () => {
+
+
+
     sidebar.classList.remove('inActive');
     content.classList.remove('active');
+
     !isSideMenuOpen && navInactiveContent.classList.add('d-none');
     !isSideMenuOpen && navActiveContent.classList.remove('d-none');
 });
 
 // Remove "inActive" class when not hovering
 sidebar.addEventListener('mouseleave', () => {
+
+
     !isSideMenuOpen && sidebar.classList.add('inActive');
     !isSideMenuOpen && content.classList.add('active');
     !isSideMenuOpen && navActiveContent.classList.add('d-none');
@@ -134,7 +142,6 @@ sidebar.addEventListener('mouseleave', () => {
 // small device sidebar control
 miniBtn.addEventListener('click', () => {
     sidebar.classList.remove('inActive');
-    // sidebar.classList.add('show-nav');
     navInactiveContent.classList.add('d-none');
     navActiveContent.classList.remove('d-none');
     bodyOverlay[0].classList.add('show-nav')
@@ -152,7 +159,6 @@ sidebarCollapse.addEventListener('click', () => {
 
         navInactiveContent.classList.add('d-none');
         navActiveContent.classList.remove('d-none');
-        console.log('yes')
     }
     else {
         sidebar.classList.add('inActive');
@@ -160,7 +166,6 @@ sidebarCollapse.addEventListener('click', () => {
 
         navInactiveContent.classList.remove('d-none');
         navActiveContent.classList.add('d-none');
-        console.log('no')
     }
 
     const arrow_ios = document.getElementById('arrow_ios');
